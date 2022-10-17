@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Vocalance Widget -->
+    <vocalance-widget class="vocalance-widget">
+      <div class="v-w-bloc">
+        <!-- Section Progression Bar -->
+        <div class="v-w-bloc-progess">
+          <div></div>
+        </div>
+        <h5>Vocalance</h5>
+        <!-- Section illustration -->
+        <div class="v-w-bloc-illustration">
+          <img alt="icon-boot" src="" />
+          <div>
+            <img alt="icon-online" src="" />
+            <img alt="icon-success" src="" />
+            <span>en cours...</span>
+          </div>
+          <img alt="icon-user" src="" />
+        </div>
+        <!-- Section soundBar -->
+        <div>soundbar</div>
+        <!-- Section current question -->
+        <div class="v-w-question-bloc">
+          <p>Quel est votre age de naissance ?</p>
+        </div>
+      </div>
+    </vocalance-widget>
+
+    <!-- script src="vocalance.js?b"></script -->
+    <!-- script>
+      // 97837953-25eb-4ca3-aaed-81f42cf3db8b
+      // 978272ba-3c1c-4124-9646-db47524e15aa
+      let vocalAssisante = new VocalanceJS(
+        "978272ba-3c1c-4124-9646-db47524e15aa"
+      );
+
+      vocalAssisante.onReady((event) => {
+        //vocalAssisante.getProject();
+        // -
+        // vocalance.getQuestion(1);
+        // vocalance.getAllQuestions();
+        // -
+        // vocalance.getResponse(1);
+        // vocalance.getAllResponses();
+        event.start();
+      });
+    </script -->
+
+    <!-- script type="text/javascript">
+      const GetSpeech = () => {
+        const SpeechRecognition =
+          window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        let recognition = new SpeechRecognition();
+
+        recognition.onstart = () => {
+          console.log("starting listening, speak in microphone");
+        };
+        recognition.onspeechend = () => {
+          console.log("stopped listening");
+          recognition.stop();
+        };
+        recognition.onresult = (result) => {
+          console.log(result.results[0][0].transcript);
+        };
+
+        recognition.start();
+      };
+
+      GetSpeech();
+    </script -->
+  </body>
+</html>
