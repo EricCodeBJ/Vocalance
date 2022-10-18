@@ -5,4 +5,3 @@
 
 - text to speech
 - speech to text
-- UI chat and animation

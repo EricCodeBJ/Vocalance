@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+vocalance-widget {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: -1;
+    opacity: 0;
+    font-family: 'Roboto', sans-serif;
+    transition: .3s ease-in-out;
+}
+
+.vocalance-widget-show {
+    opacity: 1;
+    z-index: 99999;
+}
+
+.vocalance-widget-hide {
+    opacity: 0;
+    z-index: -1;
+}
+
+
+vocalance-widget img {
+    width: 80px;
+}
+
+vocalance-widget > div.v-w-bloc {
+    background-color: white;
+    height: max-content;
+    border-radius: 7px;
+    box-shadow: 1px 2px 6px 5px rgba(0, 0, 0, 0.173);
+    text-align: center;
+    width: 500px;
+    margin: 15px;
+    max-width: 100%;
+}
+
+vocalance-widget h5.title {
+    margin: 0 0px 15px 0px;
+    text-align: center;
+    font-size: 1.7rem;
+    DISPLAY: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+vocalance-widget .v-w-bloc-content {
+    padding: 20px;
+}
+
+/* Progress bar */
+vocalance-widget .v-w-bloc-progess {
+    width: 100%;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    overflow: hidden;
+    background-color: #1a73e82e;
+    transition: .3s ease-in-out;
+} 
+
+vocalance-widget .v-w-bloc-progession-bar {
+    width: 0%;
+    padding: 4px;
+    border-radius: 7px;
+    background: #1a73e8;
+    text-align: end;
+    color: white;
+}
+
+
+/* Illustration */
+vocalance-widget img[alt='icon-statut'] {
+    position: absolute;
+    right: -35px;
+    top: -15px;
+    z-index: 1;
+    border-radius: 50%;
+    padding: 7px;
+    background: #f1f3f4;
+    width: 40px;
+    margin-right: 10px;
+}
+
+vocalance-widget .vw-chat-badge-success {
+    opacity: 0;
+}
+
+
+
+/* SoundBar */
+@keyframes v-w-quiet {
+    25%{
+        transform: scaleY(.6);
+    }
+    50%{
+        transform: scaleY(.1);
+    }
+    75%{
+        transform: scaleY(.8);
+    }
+}
+@keyframes v-w-normal {
+    25%{
+        transform: scaleY(1);
+    }
+    50%{
+        transform: scaleY(.4);
+    }
+    75%{
+        transform: scaleY(.6);
+    }
+}
+@keyframes v-w-loud {
+    25%{
+        transform: scaleY(1);
+    }
+    50%{
+        transform: scaleY(.2);
+    }
+    75%{
+        transform: scaleY(1.2);
+    }
+}
+  
+vocalance-widget .v-w-soundbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 90% !important;
+    margin: 15px auto 24px auto;
+    transition: .3s ease-in-out;
+    height: 50px;
+    --boxSize: 4px;
+    --gutter: 4px;
+}
+
+vocalance-widget .v-w-box {
+    transform: scaleY(.4);
+    width: var(--boxSize);
+    background: #dee0e5;
+    border-radius: 8px;
+}
+
+vocalance-widget .v-w-soundbar-animated-boot .v-w-box {
+    height: 100%;
+    background: #1ae8da;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+vocalance-widget .v-w-soundbar-animated-user .v-w-box {
+    height: 100%;
+    background: #1a73e8;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+vocalance-widget .v-w-soundbar-animated-error .v-w-box {
+    height: 100%;
+    background: #FF0000;
+}
+
+vocalance-widget .v-w-soundbar-animated-success .v-w-box {
+    height: 100%;
+    background: #54d500;
+}
+
+vocalance-widget .v-w-soundbar-animated-boot .v-w-box1, vocalance-widget .v-w-soundbar-animated-user .v-w-box1 {
+    animation-name: v-w-quiet;
+}
+
+vocalance-widget .v-w-soundbar-animated-boot .v-w-box2, vocalance-widget .v-w-soundbar-animated-user .v-w-box2 {
+    animation-name: v-w-normal;
+}
+
+vocalance-widget .v-w-soundbar-animated-boot .v-w-box3, vocalance-widget .v-w-soundbar-animated-user .v-w-box3 {
+    animation-name: v-w-quiet;
+}
+
+vocalance-widget .v-w-soundbar-animated-boot .v-w-box4, vocalance-widget .v-w-soundbar-animated-user .v-w-box4 {
+    animation-name: v-w-loud;
+}
+
+vocalance-widget .v-w-soundbar-animated-boot .v-w-box5, vocalance-widget .v-w-soundbar-animated-user .v-w-box5 {
+    animation-name: v-w-quiet;
+}
+
+/* Chat Section */
+vocalance-widget .v-w-chat-bloc {
+    width: 100%;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+vocalance-widget .v-w-question-bloc, vocalance-widget .v-w-reponse-bloc {
+    width: fit-content;
+    max-width: 80%;
+
+}
+
+vocalance-widget .v-w-question-bloc p, vocalance-widget .v-w-reponse-bloc p {
+    margin-top: 0px !important;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 7px;
+    font-size: 1.05rem;
+}
+
+vocalance-widget .v-w-question-bloc p {
+    background: #d6e7e6;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    text-align: start;
+}
+
+vocalance-widget .v-w-reponse-bloc {
+   display: flex;
+   justify-content: right;
+   margin-right: 5px;
+}
+
+vocalance-widget .v-w-reponse-bloc p {
+    background: #1a73e8;
+    color: white;
+    padding-right: 15px;
+    text-align: end;
+    margin-bottom: 15px;
+}
+
+/* SCROLLBAR width */
+vocalance-widget ::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* SCROLLBAR Track */
+vocalance-widget ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* SCROLLBAR Handle */
+vocalance-widget  ::-webkit-scrollbar-thumb {
+    background: #1a73e8b9;
+    border-radius: 10px;
+}
+
+/* SCROLLBAR Handle on hover */
+vocalance-widget ::-webkit-scrollbar-thumb:hover {
+    background: #1a73e8;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/vocalance.css" />
+  </head>
+  <body>
+    <button id="demarrer">Démmarrer</button>
+    <vocalance-widget
+      av-key="978272ba-3c1c-4124-9646-db47524e15aa"
+    ></vocalance-widget>
+
+    <script src="../src/vocalance.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        let vocalanceJS = new VocalanceJS();
+
+        vocalanceJS.onReady((vocalAssisante) => {
+          //vocalAssisante.getProject();
+          // -
+          // vocalance.getQuestion(1);
+          // vocalance.getAllQuestions();
+          // -
+          // vocalance.getResponse(1);
+          // vocalance.getAllResponses();
+          document.getElementById("demarrer").addEventListener("click", () => {
+            vocalAssisante.start();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
