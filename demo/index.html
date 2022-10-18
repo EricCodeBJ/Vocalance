@@ -5,29 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../src/vocalance.css" />
+    <link
+      rel="stylesheet"
+      href="https://www.kidevs.xyz/vocalance/lib/src/min/vocalance.min.v.0.1.css"
+    />
   </head>
   <body>
-    <button id="demarrer">Démmarrer</button>
+    <button hidden id="demarrer">Démmarrer</button>
     <vocalance-widget
-      av-key="978272ba-3c1c-4124-9646-db47524e15aa"
+      av-key="97889554-d6c8-42e9-815a-0fa5df7380a6"
     ></vocalance-widget>
 
-    <script src="../src/vocalance.js"></script>
+    <script src="https://www.kidevs.xyz/vocalance/lib/src/min/vocalance.min.v.0.1.js"></script>
     <script>
       window.addEventListener("DOMContentLoaded", (event) => {
         let vocalanceJS = new VocalanceJS();
 
+        let btnDemarrer = document.getElementById("demarrer");
+
         vocalanceJS.onReady((vocalAssisante) => {
           //vocalAssisante.getProject();
           // -
-          // vocalance.getQuestion(1);
-          // vocalance.getAllQuestions();
+          // vocalAssisante.getQuestion(1);
+          // vocalAssisante.getAllQuestions();
           // -
-          // vocalance.getResponse(1);
-          // vocalance.getAllResponses();
-          document.getElementById("demarrer").addEventListener("click", () => {
+          // vocalAssisante.getResponse(1);
+          // vocalAssisante.getAllResponses();
+          // -
+          // vocalAssisante.setStep(0);
+          // vocalAssisante.getStep();
+          btnDemarrer.removeAttribute("hidden");
+
+          btnDemarrer.addEventListener("click", () => {
             vocalAssisante.start();
+          });
+
+          // vocalAssisante.onFinish((reponses) => {
+          //   console.log(reponses);
+          // });
+
+          // vocalAssisante.goTo(2);
+          // vocalAssisante.repeat();
+
+          vocalAssisante.onResponse((step, reponse) => {
+            getResponse = (reponse + "").trim();
+            if (step == 0) {
+              if (getResponse != "village") {
+                vocalAssisante.repeat();
+              }
+            } else if (step == 1) {
+              if (getResponse != "courage") {
+                vocalAssisante.repeat();
+              }
+            } else if (step == 2) {
+              if (getResponse != "gaiement") {
+                vocalAssisante.repeat();
+              }
+            }
+            return true;
           });
         });
       });

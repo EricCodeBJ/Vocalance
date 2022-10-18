@@ -66,12 +66,14 @@ vocalance-widget .v-w-bloc-progess {
 } 
 
 vocalance-widget .v-w-bloc-progession-bar {
-    width: 0%;
+    width: 100%;
     padding: 4px;
     border-radius: 7px;
     background: #1a73e8;
     text-align: end;
     color: white;
+    transition: 1s ease-in-out;
+    -webkit-transition: 1s ease-in-out;
 }
 
 
@@ -80,16 +82,11 @@ vocalance-widget img[alt='icon-statut'] {
     position: absolute;
     right: -35px;
     top: -15px;
-    z-index: 1;
     border-radius: 50%;
     padding: 7px;
     background: #f1f3f4;
     width: 40px;
     margin-right: 10px;
-}
-
-vocalance-widget .vw-chat-badge-success {
-    opacity: 0;
 }
 
 
@@ -199,20 +196,23 @@ vocalance-widget .v-w-chat-bloc {
     width: 100%;
     max-height: 400px;
     overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 vocalance-widget .v-w-question-bloc, vocalance-widget .v-w-reponse-bloc {
-    width: fit-content;
-    max-width: 80%;
-
+    width: 100%;
 }
 
 vocalance-widget .v-w-question-bloc p, vocalance-widget .v-w-reponse-bloc p {
     margin-top: 0px !important;
     padding: 10px;
-    width: fit-content;
+    width: fit-content !important;
     border-radius: 7px;
     font-size: 1.05rem;
+    width: fit-content;
+    max-width: 80%;
 }
 
 vocalance-widget .v-w-question-bloc p {
